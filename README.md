@@ -4,6 +4,7 @@ The INCEPTION boilerplate is a boilerplate in a boilerplate in a... etc. It's mo
 Jasmine, and html5.
 
 Bits and pieces put together from various projects to get started writing an application that uses:
+
 *   [SCSS](http://sass-lang.com) via [Compass](http://compass-style.org) to quickly and efficiently build CSS
 *   [Coffeescript](http://jashkenas.github.com/coffee-script/) to quickly and efficiently write Javascript
 *   [Jasmine](http://pivotal.github.com/jasmine/) hookups with Coffeescript with the help of the [InstantJasmineCoffee project](https://github.com/krismolendyke/InstantJasmineCoffee) (I would have linked it in here rather than copying the files, but I had to change the paths around a bit.)

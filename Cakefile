@@ -3,16 +3,19 @@ fs     = require 'fs'
 util   = require 'util'
 uglify = require './node_modules/uglify-js'
 
-prodSrcCoffeeDir     = 'src/Coffeescript/src'
-testSrcCoffeeDir     = 'src/Coffeescript/test/src/coffee-script'
+srcDir = 'src'
+targetDir = 'bin'
 
-prodSrcCompassDir    = 'src/SCSS'
-prodTargetCompassDir = 'bin/css'
+prodSrcCoffeeDir     = "#{srcDir}/Coffeescript/src"
+testSrcCoffeeDir     = "#{srcDir}/Coffeescript/test/src/coffee-script"
 
-prodTargetJsDir      = 'bin/js'
-testTargetJsDir      = 'src/Coffeescript/test/src/js'
+prodSrcCompassDir    = "#{srcDir}/SCSS"
+prodTargetCompassDir = "#{targetDir}/css"
 
-prodTargetFileName   = 'script'
+prodTargetJsDir      = "#{targetDir}/js"
+testTargetJsDir      = "#{srcDir}/Coffeescript/test/src/js"
+
+prodTargetFileName   = "script"
 prodTargetCoffeeFile = "#{prodSrcCoffeeDir}/#{prodTargetFileName}.coffee"
 prodTargetJsFile     = "#{prodTargetJsDir}/#{prodTargetFileName}.js"
 prodTargetJsMinFile  = "#{prodTargetJsDir}/#{prodTargetFileName}.min.js"
@@ -40,13 +43,7 @@ task 'watch:all', 'Watch production and test CoffeeScript', ->
     
 task 'build:all', 'Build production and test CoffeeScript', ->
     invoke 'build:test'
-    invoke 'build'
-   
-    util.log "Commpiling compass."
-    exec 'compass compile', (error, stdout, stderr) ->
-      util.log stdout
-      util.log stderr
-      util.log 'error: ' + error
+    invoke 'build:compass'
 
 task 'build:compass', 'Build production Compass', ->
     exec 'compass compile', (error, stdout, stderr) ->

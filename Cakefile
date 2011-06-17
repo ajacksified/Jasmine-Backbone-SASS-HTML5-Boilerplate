@@ -6,6 +6,9 @@ uglify = require './node_modules/uglify-js'
 prodSrcCoffeeDir     = 'src/Coffeescript/src'
 testSrcCoffeeDir     = 'src/Coffeescript/test/src/coffee-script'
 
+prodSrcCompassDir    = 'src/SCSS'
+prodTargetCompassDir = 'bin/css'
+
 prodTargetJsDir      = 'bin/js'
 testTargetJsDir      = 'src/Coffeescript/test/src/js'
 
@@ -17,6 +20,13 @@ prodTargetJsMinFile  = "#{prodTargetJsDir}/#{prodTargetFileName}.min.js"
 prodCoffeeOpts = "--bare --output #{prodTargetJsDir} --compile #{prodTargetCoffeeFile}"
 testCoffeeOpts = "--output #{testTargetJsDir}"
 
+prodCompassFiles = [
+  'handheld'
+  'ie'
+  'print'
+  'screen'
+  'tablet'
+]
 
 prodCoffeeFiles = [
     'intro'
@@ -31,6 +41,18 @@ task 'watch:all', 'Watch production and test CoffeeScript', ->
 task 'build:all', 'Build production and test CoffeeScript', ->
     invoke 'build:test'
     invoke 'build'
+   
+    util.log "Commpiling compass."
+    exec 'compass compile', (error, stdout, stderr) ->
+      util.log stdout
+      util.log stderr
+      util.log 'error: ' + error
+
+task 'build:compass', 'Build production Compass', ->
+    exec 'compass compile', (error, stdout, stderr) ->
+      util.log stdout
+      util.log stderr
+      util.log 'error: ' + error
 
 task 'watch', 'Watch prod source files and build changes', ->
     invoke 'build'
@@ -41,6 +63,12 @@ task 'watch', 'Watch prod source files and build changes', ->
             if +curr.mtime isnt +prev.mtime
                 util.log "Saw change in #{prodSrcCoffeeDir}/#{file}.coffee"
                 invoke 'build'
+
+    for file in prodCompassFiles then do (file) ->
+        fs.watchFile "#{prodSrcCompassDir}/#{file}.scss", (curr, prev) ->
+            if +curr.mtime isnt +prev.mtime
+                util.log "Saw change in #{prodSrcCompassDir}/#{file}.scss"
+                invoke 'build:compass'
 
 task 'build', 'Build a single JavaScript file from prod files', ->
     util.log "Building #{prodTargetJsFile}"
@@ -107,9 +135,6 @@ task 'uglify', 'Minify and obfuscate', ->
         util.log message
         displayNotification message
     
-task 'build:compass', 'Build SCSS files for prod', ->
-  invoke ''
-
 coffee = (options = "", file) ->
     util.log "Compiling #{file}"
     exec "coffee #{options} --compile #{file}", (err, stdout, stderr) -> 

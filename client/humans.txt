@@ -1,0 +1,63 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Project Lead: Jack Lawson
+  Site: http://www.thetwelvedrummers.com
+  Twitter: @ajacksified
+  Location: San Francisco, CA
+
+/* THANKS */
+  The team at Olivine Labs <http://www.olivinelabs.com>
+  #bbg on irc.freenode.net
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery, backbone, underscore
+  Software: vim, ubuntu, mongodb, c#, Alchemy Websockets
+
+
+
+                                                    /
+                                                  .7
+                                       \       , //
+                                       |\.--._/|//
+                                      /\ ) ) ).'/
+                                     /(  \  // /
+                                    /(   J`((_/ \
+                                   / ) | _\     /
+                                  /|)  \  eJ    L
+                                 |  \ L \   L   L
+                                /  \  J  `. J   L
+                                |  )   L   \/   \
+                               /  \    J   (\   /
+             _....___         |  \      \   \```
+      ,.._.-'        '''--...-||\     -. \   \
+    .'.=.'                    `         `.\ [ Y
+   /   /                                  \]  J
+  Y / Y                                    Y   L
+  | | |          \                         |   L
+  | | |           Y                        A  J
+  |   I           |                       /I\ /
+  |    \          I             \        ( |]/|
+  J     \         /._           /        -tI/ |
+   L     )       /   /'-------'J           `'-:.
+   J   .'      ,'  ,' ,     \   `'-.__          \
+    \ T      ,'  ,'   )\    /|        ';'---7   /
+     \|    ,'L  Y...-' / _.' /         \   /   /
+      J   Y  |  J    .'-'   /         ,--.(   /
+       L  |  J   L -'     .'         /  |    /\
+       |  J.  L  J     .-;.-/       |    \ .' /
+       J   L`-J   L____,.-'`        |  _.-'   |
+        L  J   L  J                  ``  J    |
+        J   L  |   L                     J    |
+         L  J  L    \                    L    \
+         |   L  ) _.'\                    ) _.'\
+         L    \('`    \                  ('`    \
+          ) _.'\`-....'                   `-....'
+         ('`    \
+          `-.___/   sk
+
+
+

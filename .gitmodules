@@ -1,0 +1,12 @@
+[submodule "client/js/libs/backbone"]
+	path = client/js/libs/backbone
+	url = https://github.com/documentcloud/backbone
+[submodule "client/js/libs/underscore"]
+	path = client/js/libs/underscore
+	url = https://github.com/documentcloud/underscore
+[submodule "client/js/libs/json2"]
+	path = client/js/libs/json2
+	url = https://github.com/douglascrockford/JSON-js
+[submodule "client/js/libs/mustache"]
+	path = client/js/libs/mustache
+	url = https://github.com/janl/mustache.js/
